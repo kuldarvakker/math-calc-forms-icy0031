@@ -1,8 +1,14 @@
-import React from 'react';
+import React, {FormEvent} from 'react';
 import {Container, Col, Row, Form, Card} from "react-bootstrap";
 import Form1 from "./components/FormCard";
 
 function App() {
+    const handleSubmit = (event : FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        Array.from(event.target as HTMLFormElement).forEach((input) => {
+            console.log(input);
+        });
+    }
 
   return (
       <div>
@@ -11,6 +17,8 @@ function App() {
                   <Col />
                   <Col md={6}>
                       <Form1
+                          title={'abc'}
+                          handleSubmit={(e) => handleSubmit(e)}
                           // handleSubmit={(event : FormEvent<HTMLFormElement>) => {
                           // alert("aaa");
                           // }}

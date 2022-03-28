@@ -1,21 +1,12 @@
 import React, {FormEvent} from "react";
 import {Button, Card, Form} from "react-bootstrap";
 
-// type Props = {
-//     handleSubmit: (event: FormEvent<HTMLElement>) => void,
-// };
+type Props = {
+    title: string;
+    handleSubmit: (event: FormEvent<HTMLFormElement>) => void;
+};
 
-const Form1 = () => {
-
-
-    // const handleSubmit = props.handleSubmit as Props.handleSubmit;
-
-    const handleSubmit = (event : FormEvent<HTMLFormElement>) => {
-        event.preventDefault();
-        Array.from(event.target as HTMLFormElement).forEach((input) => {
-            console.log(input);
-        });
-    }
+const Form1 = ({title, handleSubmit}: Props) => {
 
     return(
         <Card>
