@@ -11,7 +11,7 @@ function SecondPage() {
 
     return (
         <div>
-            <Container style={{"marginTop": "1.5rem", "display": "flex", "justifyContent": "space-between", "flexWrap": "wrap"}}>
+            <div style={{"padding": "30px", "gap": "28px", "display": "flex", "width": "100%", "flexWrap": "wrap"}}>
                 <FormCard
                     title={'Ajaldatud kasumi väärtus'}
                     handleSubmit={(e) => setState(AjaldatudKasumiVaartus(e))}
@@ -26,7 +26,7 @@ function SecondPage() {
                     ]}
                     answer={state}
                 />
-            </Container>
+            </div>
         </div>
     );
 }
