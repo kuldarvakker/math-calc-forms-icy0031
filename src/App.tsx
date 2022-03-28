@@ -1,5 +1,4 @@
 import React, {FormEvent} from 'react';
-import './App.css';
 import {Card, Button, Form, Container, Col, Row} from "react-bootstrap";
 
 // type Props = {
