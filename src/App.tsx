@@ -19,8 +19,15 @@ function App() {
                         <Form1
                             title={'abc'}
                             handleSubmit={(e) => handleSubmit(e)}
-                            text={['Investor soovib osta N ettevõtte aktsiaid, mis ei ole börsiettevõte. Ettevõtte omanikud on ajakirjanduse kaudu teatanud, et nemad maksavad vähemalt',
-                                <Form.Control type="text" style={{display: "inline", width: "3rem"}} placeholder="5"/>]}
+                            text={[
+                                'Investor soovib osta N ettevõtte aktsiaid, mis ei ole börsiettevõte. Ettevõtte omanikud on ajakirjanduse kaudu teatanud, et nemad maksavad vähemalt ',
+                                <Form.Control type="text" style={{display: "inline", width: "3rem"}} placeholder="5"/>,
+                                ' aastat dividende, suuruses ',
+                                <Form.Control type="text" style={{display: "inline", width: "3rem"}} placeholder="2" />,
+                                ' € aktsia kohta. Pikaajaliseks tulumääraks antud riigis prognoositakse ',
+                                <Form.Control type="text" style={{display: "inline", width: "3rem"}} placeholder="4" />,
+                                ' % aastas. Millise hinnaga oleks mõistlik aktsiat osta?'
+                                ]}
 
                         />
                     </Col>
