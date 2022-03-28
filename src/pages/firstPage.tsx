@@ -9,7 +9,7 @@ import {
     RoaRoe,
     TasuvusAeg,
     TasuvusPunkt, Eps, EpsDiv, Npv
-} from "../formulas/AjaldatudKasumiVaartus";
+} from "../formulas/FirstPageFormulas";
 
 function FirstPage() {
 

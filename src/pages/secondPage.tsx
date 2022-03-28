@@ -3,13 +3,7 @@ import {Container, Col, Row, Form} from "react-bootstrap";
 import FormCard from "../components/FormCard"
 import {
     AjaldatudKasumiVaartus,
-    Roi,
-    Tulumaar,
-    RoiYearly,
-    RoaRoe,
-    TasuvusAeg,
-    TasuvusPunkt, Eps, EpsDiv, Npv
-} from "../formulas/AjaldatudKasumiVaartus";
+} from "../formulas/SecondPageFormulas";
 
 function SecondPage() {
 
