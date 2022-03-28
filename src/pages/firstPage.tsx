@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Container, Col, Row, Form} from "react-bootstrap";
+import {Form} from "react-bootstrap";
 import FormCard from "../components/FormCard"
 import {
     AjaldatudKasumiVaartus,
