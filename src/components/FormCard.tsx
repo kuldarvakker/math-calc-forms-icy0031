@@ -11,7 +11,7 @@ type Props = {
 const FormCard = ({title, text, answer, handleSubmit}: Props) => {
 
     return(
-        <Card>
+        <Card className="mb-4">
             <Card.Body>
                 <Form onSubmit={(event) => handleSubmit(event)}>
                     <Card.Title>{title}</Card.Title>
