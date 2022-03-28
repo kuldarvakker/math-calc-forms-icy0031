@@ -4,9 +4,10 @@ import {Button, Card, Form} from "react-bootstrap";
 type Props = {
     title: string;
     handleSubmit: (event: FormEvent<HTMLFormElement>) => void;
+    text: any;
 };
 
-const Form1 = ({title, handleSubmit}: Props) => {
+const Form1 = ({title, text, handleSubmit}: Props) => {
 
     return(
         <Card>
@@ -21,6 +22,8 @@ const Form1 = ({title, handleSubmit}: Props) => {
                         Pikaajaliseks tulumääraks antud riigis prognoositakse <Form.Control type="text" style={{display: "inline", width: "3rem"}} placeholder="4" />% aastas.
                         Millise hinnaga oleks mõistlik aktsiat osta?
                     </Card.Text>
+                    {text[0]}
+                    {text[1]}
                     <Button variant="primary" type="submit">Submit</Button>
                 </form>
             </Card.Body>
