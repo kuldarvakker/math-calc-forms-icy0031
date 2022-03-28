@@ -127,11 +127,13 @@ function App() {
                     title={'Tasuvuspunkt'}
                     handleSubmit={(e) => setTasuvusPunkt(TasuvusPunkt(e))}
                     text={[
-                        'Ettevõtte kavatseb teha uude tehnoloogiasse investeeringut ',
-                        <Form.Control type="text" style={{display: "inline", width: "10rem"}} placeholder="5000000"/>,
-                        ' €. Prognooside kohaselt peaks see tagama iga-aastase sissetuleva rahavoo ',
-                        <Form.Control type="text" style={{display: "inline", width: "10rem"}} placeholder="880000"/>,
-                        ' €. Mitme aastaga tasub ära mainitud investeering?'
+                        'Teada on, et ettevõtte ühe kuu muutuvkulud on ',
+                        <Form.Control type="text" style={{display: "inline", width: "7rem"}} placeholder="7000"/>,
+                        '  €, sama perioodi püsikulud on ',
+                        <Form.Control type="text" style={{display: "inline", width: "5rem"}} placeholder="200"/>,
+                        ' € ja toote läbimüük ',
+                        <Form.Control type="text" style={{display: "inline", width: "7rem"}} placeholder="8000"/>,
+                        ' €. Kui suure summa eest peab ettevõtja toodet müüma, et jõuda kasumisse?'
                     ]}
                     answer={tasuvusPunkt}
                 />
