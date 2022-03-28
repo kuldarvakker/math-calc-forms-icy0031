@@ -8,7 +8,7 @@ import {
     RoiYearly,
     RoaRoe,
     TasuvusAeg,
-    TasuvusPunkt
+    TasuvusPunkt, Eps, EpsDiv, Npv
 } from "./formulas/AjaldatudKasumiVaartus";
 
 function App() {
@@ -21,6 +21,10 @@ function App() {
     const [roe, setRoe] = useState([NaN, "No answer"]);
     const [tasuvusAeg, setTasuvusAeg] = useState([NaN, "No answer"]);
     const [tasuvusPunkt, setTasuvusPunkt] = useState([NaN, "No answer"]);
+    const [eps, setEps] = useState([NaN, "No answer"]);
+    const [epsDiv, setEpsDiv] = useState([NaN, "No answer"]);
+    const [npv, setNpv] = useState([NaN, "No answer"]);
+
 
 
     return (
@@ -136,6 +140,64 @@ function App() {
                         ' €. Kui suure summa eest peab ettevõtja toodet müüma, et jõuda kasumisse?'
                     ]}
                     answer={tasuvusPunkt}
+                />
+
+                <FormCard
+                    title={'EPS (Earnings per Share)'}
+                    handleSubmit={(e) => setEps(Eps(e))}
+                    text={[
+                        'Ettevõtte aktsiate arv on ',
+                        <Form.Control type="text" style={{display: "inline", width: "10rem"}} placeholder="800000"/>,
+                        ' ja aasta puhaskasum oli ',
+                        <Form.Control type="text" style={{display: "inline", width: "10rem"}} placeholder="200000"/>,
+                        ' €. Aktsionäride üldkoosolek otsustas dividendidena välja maksta ',
+                        <Form.Control type="text" style={{display: "inline", width: "10rem"}} placeholder="1800000"/>,
+                        ' €. Arvuta antud ettevõtte EPS väärtus'
+                    ]}
+                    answer={eps}
+                />
+
+                <FormCard
+                    title={'EPS with Dividends'}
+                    handleSubmit={(e) => setEpsDiv(EpsDiv(e))}
+                    text={[
+                        'Ettevõtte aktsiate arv on ',
+                        <Form.Control type="text" style={{display: "inline", width: "10rem"}} placeholder="800000"/>,
+                        ' ja eelisaktsiate arv ',
+                        <Form.Control type="text" style={{display: "inline", width: "10rem"}} placeholder="200000"/>,
+                        ' .Aasta puhaskasum oli ',
+                        <Form.Control type="text" style={{display: "inline", width: "10rem"}} placeholder="1800000"/>,
+                        ' €. Eelisaktsiatel makstakse igal aastal ',
+                        <Form.Control type="text" style={{display: "inline", width: "4rem"}} placeholder="1.8"/>,
+                        ' € aktsia kohta. Aktsionäride üldkoosolek otsustas dividendidena \n' +
+                        'välja maksta ',
+                        <Form.Control type="text" style={{display: "inline", width: "10rem"}} placeholder="18000"/>,
+                        ' €. Arvuta antud ettevõtte EPS väärtus.'
+                    ]}
+                    answer={epsDiv}
+                />
+
+                <FormCard
+                    title={'NPV'}
+                    handleSubmit={(e) => setNpv(Npv(e))}
+                    text={[
+                        'Ettevõtte plaanib teha investeeringut suuruses Sk = ',
+                        <Form.Control type="text" style={{display: "inline", width: "10rem"}} placeholder="800000"/>,
+                        ' €, mis investorite arvates peaks ära tasuma nelja aastaga. ',
+                        <br />,
+                        'Samal ajal on teada, et esimese aasta kasumiks prognoositakse ',
+                        <Form.Control type="text" style={{display: "inline", width: "10rem"}} placeholder="200000"/>,
+                        ' €, teisel aastal ',
+                        <Form.Control type="text" style={{display: "inline", width: "10rem"}} placeholder="1800000"/>,
+                        ' €, kolmandal aastal ',
+                        <Form.Control type="text" style={{display: "inline", width: "10rem"}} placeholder="18000000"/>,
+                        ' € neljandal aastal ca ',
+                        <Form.Control type="text" style={{display: "inline", width: "10rem"}} placeholder="18000"/>,
+                        ' €. Eeldatav keskmine reaalne tulumäär neljal vaadeldaval aasta oleks',
+                        <Form.Control type="text" style={{display: "inline", width: "4rem"}} placeholder="4"/>,
+                        ' % aastas. Kas investorite ootused on põhjendatud? Leidke NPV väärus!'
+                    ]}
+                    answer={npv}
                 />
 
             </Container>
