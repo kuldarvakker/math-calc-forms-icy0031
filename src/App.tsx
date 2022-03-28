@@ -1,7 +1,15 @@
 import React, {useState} from 'react';
 import {Container, Col, Row, Form} from "react-bootstrap";
 import FormCard from "./components/FormCard";
-import {AjaldatudKasumiVaartus, Roi, Tulumaar, RoiYearly, RoaRoe, TasuvusAeg} from "./formulas/AjaldatudKasumiVaartus";
+import {
+    AjaldatudKasumiVaartus,
+    Roi,
+    Tulumaar,
+    RoiYearly,
+    RoaRoe,
+    TasuvusAeg,
+    TasuvusPunkt
+} from "./formulas/AjaldatudKasumiVaartus";
 
 function App() {
 
@@ -12,6 +20,7 @@ function App() {
     const [roa, setRoa] = useState([NaN, "No answer"]);
     const [roe, setRoe] = useState([NaN, "No answer"]);
     const [tasuvusAeg, setTasuvusAeg] = useState([NaN, "No answer"]);
+    const [tasuvusPunkt, setTasuvusPunkt] = useState([NaN, "No answer"]);
 
 
 
@@ -86,7 +95,7 @@ function App() {
                                 'Ettevõtte aastane puhaskasum oli ',
                                 <Form.Control type="text" style={{display: "inline", width: "10rem"}} placeholder="500000" />,
                                 ' €. Aktivate väärtus ettevõtte bilansi kohaselt olid ',
-                                <Form.Control type="text" style={{display: "inline", width: "5rem"}} placeholder="453" />,
+                                <Form.Control type="text" style={{display: "inline", width: "10rem"}} placeholder="453000" />,
                                 ' €. Kui suur on ettevõtte ROA.'
                             ]}
                             answer={roa}
@@ -99,7 +108,7 @@ function App() {
                                 'Ettevõtte aastane puhaskasum oli ',
                                 <Form.Control type="text" style={{display: "inline", width: "10rem"}} placeholder="500000" />,
                                 ' €. Aktsionäride omakapital on ettevõtte bilansi kohaselt olid ',
-                                <Form.Control type="text" style={{display: "inline", width: "5rem"}} placeholder="453" />,
+                                <Form.Control type="text" style={{display: "inline", width: "10rem"}} placeholder="45000" />,
                                 ' €. Kui suur on ettevõtte ROE.'
                             ]}
                             answer={roe}
@@ -110,12 +119,25 @@ function App() {
                             handleSubmit={(e) => setTasuvusAeg(TasuvusAeg(e))}
                             text={[
                                 'Ettevõtte kavatseb teha uude tehnoloogiasse investeeringut ',
-                                <Form.Control type="text" style={{display: "inline", width: "10rem"}} placeholder="500000" />,
+                                <Form.Control type="text" style={{display: "inline", width: "10rem"}} placeholder="5000000" />,
                                 ' €. Prognooside kohaselt peaks see tagama iga-aastase sissetuleva rahavoo ',
-                                <Form.Control type="text" style={{display: "inline", width: "10rem"}} placeholder="453" />,
+                                <Form.Control type="text" style={{display: "inline", width: "10rem"}} placeholder="880000" />,
                                 ' €. Mitme aastaga tasub ära mainitud investeering?'
                             ]}
                             answer={tasuvusAeg}
+                        />
+
+                        <FormCard
+                            title={'Tasuvuspunkt'}
+                            handleSubmit={(e) => setTasuvusPunkt(TasuvusPunkt(e))}
+                            text={[
+                                'Ettevõtte kavatseb teha uude tehnoloogiasse investeeringut ',
+                                <Form.Control type="text" style={{display: "inline", width: "10rem"}} placeholder="5000000" />,
+                                ' €. Prognooside kohaselt peaks see tagama iga-aastase sissetuleva rahavoo ',
+                                <Form.Control type="text" style={{display: "inline", width: "10rem"}} placeholder="880000" />,
+                                ' €. Mitme aastaga tasub ära mainitud investeering?'
+                            ]}
+                            answer={tasuvusPunkt}
                         />
 
                     </Col>
