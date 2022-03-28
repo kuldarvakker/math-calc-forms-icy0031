@@ -10,8 +10,6 @@ const pages = {
 
 function App() {
     const [page, setPage] = useState(1);
-    console.log(pages.first)
-    console.log(page);
     return (
         <div>
             <div style={{ "justifyContent": "center", "marginTop": "12px", "display": "flex", "gap": "24px"}}>
