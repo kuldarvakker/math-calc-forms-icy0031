@@ -5,9 +5,10 @@ type Props = {
     title: string;
     handleSubmit: (event: FormEvent<HTMLFormElement>) => void;
     text: any[];
+    answer: any[];
 };
 
-const Form1 = ({title, text, handleSubmit}: Props) => {
+const FormCard = ({title, text, answer, handleSubmit}: Props) => {
 
     return(
         <Card>
@@ -15,14 +16,15 @@ const Form1 = ({title, text, handleSubmit}: Props) => {
                 <Form onSubmit={(event) => handleSubmit(event)}>
                     <Card.Title>{title}</Card.Title>
                     <Card.Text>
-                        {text.map(elem => elem)}
+                        {text.map(elem => <span key={text.indexOf(elem)}>{elem}</span>)}
                     </Card.Text>
                     <Button variant="primary" type="submit">Submit</Button>
                 </Form>
             </Card.Body>
+            <Card.Footer className="text-muted">{answer[0]} <br /> {answer[1]}</Card.Footer>
         </Card>
     );
 }
 
 
-export default Form1;
+export default FormCard;
